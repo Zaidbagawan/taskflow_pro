@@ -1,0 +1,75 @@
+
+1.SEND OTP
+
+POST /api/send-otp/
+
+{
+  "email": "admin@gmail.com"
+}
+
+2. VERIFY OTP (Login)
+
+ POST /api/verify-otp/
+
+{
+  "email": "admin@gmail.com",
+  "otp": "123456"
+}
+
+Copy token from response
+
+3. CREATE TASK (Admin)
+
+ POST /api/tasks/create/
+
+{
+  "title": "Audit Logging Testing",
+  "description": "Testing full flow from scratch",
+  "status": "pending",
+  "assigned_to": 4
+}
+
+4. GET TASKS
+
+GET /api/tasks/
+
+
+
+5. UPDATE TASK (IMPORTANT )
+
+PATCH /api/tasks/9/
+
+{
+  "status": "completed"
+}
+
+ 6. CHECK AUDIT LOGS
+
+GET /api/audit-logs/
+
+Check:
+✔ CREATE log
+✔ UPDATE log
+✔ old_data & new_data
+
+ 7. CHECK JSON FILE
+
+👉 Go to folder:
+
+audit_logs/
+
+👉 Check:
+✔ JSON file created
+✔ Data correct
+
+TEST USER UPDATE
+
+ Login as user
+ Call:
+
+PATCH /api/tasks/9/
+{
+  "status": "pending"
+}
+
+
