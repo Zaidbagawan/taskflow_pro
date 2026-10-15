@@ -40,7 +40,7 @@ class SendOTPView(APIView):
         send_otp_service(serializer.validated_data['email'])
 
         return Response(
-            {"message": "OTP sent"},
+            {"message": "OTP sent Sucessfully"},
             status=200
         )
 class VerifyOTPView(APIView):
